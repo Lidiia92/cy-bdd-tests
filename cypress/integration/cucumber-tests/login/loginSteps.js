@@ -6,13 +6,15 @@ Given('I open the login page', () => {
 	LoginPage.visitLoginPage();
 });
 
-When('I submit the login form', () => {
-	// cy.get('#user_login').type('username');
-	// cy.get('#user_password').type('password');
-	// cy.get('input[name="submit"]').click();
+When('I fill username with {string}', (username) => {
+	LoginPage.fillUsername(username);
+});
 
-	LoginPage.fillUsername('username');
-	LoginPage.fillPassword('password');
+When('I fill password with {string}', (password) => {
+	LoginPage.fillPassword(password);
+});
+
+When('I click on submit login', () => {
 	LoginPage.submit();
 });
 
