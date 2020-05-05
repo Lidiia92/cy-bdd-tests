@@ -1,7 +1,17 @@
 Feature: Login to App
 
+    As invalid user
+    I cannot login to application
+
     As a valid user
     I want to be able to login into the App
+
+    Scenario: Invalid login
+        Given I open the login page
+        When I fill username with "invalid username"
+        And I fill password with "invalid password"
+        And I click on submit login
+        Then I should see error message
 
     Scenario: Valid login
         Given I open the login page
